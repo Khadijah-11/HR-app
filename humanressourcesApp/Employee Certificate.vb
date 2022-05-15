@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class Employee_Certificate
 
-    Dim Con As New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRMS;Integrated Security=True")
-    'Dim key = 0
+    Dim Con As New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRapp;Integrated Security=True")
+
     Private Sub fetchdata()
         If empid.Text = "" Then
             MsgBox("Enter the employee ID")

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Leave
-    Dim Con As New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRMS;Integrated Security=True")
+    Dim Con As New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRapp;Integrated Security=True")
     Private Sub Leave_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Populate()
     End Sub
@@ -50,5 +50,44 @@ Public Class Leave
         Me.Hide()
         Dim cer = New Employee_Certificate
         cer.Show()
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("do you really want to delete this Row?", "Delete", MessageBoxButtons.YesNo)
+        If dialog = DialogResult.No Then
+            Me.Close()
+        Else
+            Try
+                Con.Open()
+                Dim Query As String
+                Query = "Delete from empleave where leave_id  = " & key & ""
+                Dim cmd As SqlCommand
+                cmd = New SqlCommand(Query, Con)
+                cmd.ExecuteNonQuery()
+                MsgBox("row Deleted Successfully")
+                Con.Close()
+                Populate()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+
+    End Sub
+    Public Sub FilterData(valueToSearch As String)
+        Dim searchQuery As String = "SELECT * from empleave where concat(name,lastname,type) like '%" & valueToSearch & "%'"
+        Dim command As New SqlCommand(searchQuery, Con)
+        Dim adapter As New SqlDataAdapter(command)
+        Dim table As New DataTable()
+        adapter.Fill(table)
+        leaveDGV.DataSource = table
+    End Sub
+
+    Private Sub searchbox_TextChanged(sender As Object, e As EventArgs) Handles searchbox.TextChanged
+        FilterData(searchbox.Text)
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
     End Sub
 End Class

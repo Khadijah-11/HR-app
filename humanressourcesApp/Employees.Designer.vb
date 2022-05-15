@@ -22,9 +22,12 @@ Partial Class Employees
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.epmcin = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -39,7 +42,6 @@ Partial Class Employees
         Me.Label13 = New System.Windows.Forms.Label()
         Me.empstatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.empcomp = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -47,6 +49,7 @@ Partial Class Employees
         Me.Label8 = New System.Windows.Forms.Label()
         Me.empdob = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.epmgander = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.HRappDataSet = New humanressourcesApp.HRappDataSet()
         Me.empadd = New Guna.UI2.WinForms.Guna2TextBox()
         Me.empcnss = New Guna.UI2.WinForms.Guna2TextBox()
         Me.empemail = New Guna.UI2.WinForms.Guna2TextBox()
@@ -61,13 +64,24 @@ Partial Class Employees
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeTableAdapter = New humanressourcesApp.HRappDataSetTableAdapters.employeeTableAdapter()
+        Me.empcomp = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.searchbox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.employeeDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HRappDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.AutoScroll = True
         Me.Guna2Panel1.BackColor = System.Drawing.Color.MintCream
+        Me.Guna2Panel1.Controls.Add(Me.Label17)
+        Me.Guna2Panel1.Controls.Add(Me.searchbox)
+        Me.Guna2Panel1.Controls.Add(Me.empcomp)
         Me.Guna2Panel1.Controls.Add(Me.epmcin)
         Me.Guna2Panel1.Controls.Add(Me.Label16)
         Me.Guna2Panel1.Controls.Add(Me.empnatio)
@@ -81,7 +95,6 @@ Partial Class Employees
         Me.Guna2Panel1.Controls.Add(Me.Label13)
         Me.Guna2Panel1.Controls.Add(Me.empstatus)
         Me.Guna2Panel1.Controls.Add(Me.Label12)
-        Me.Guna2Panel1.Controls.Add(Me.empcomp)
         Me.Guna2Panel1.Controls.Add(Me.Label11)
         Me.Guna2Panel1.Controls.Add(Me.Label10)
         Me.Guna2Panel1.Controls.Add(Me.Label9)
@@ -102,6 +115,7 @@ Partial Class Employees
         Me.Guna2Panel1.Controls.Add(Me.empname)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
+        Me.Guna2Panel1.Font = New System.Drawing.Font("Lucida Handwriting", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Panel1.Location = New System.Drawing.Point(-1, 77)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1375, 548)
@@ -194,34 +208,47 @@ Partial Class Employees
         'employeeDGV
         '
         Me.employeeDGV.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(218, Byte), Integer))
-        Me.employeeDGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(218, Byte), Integer))
+        DataGridViewCellStyle16.Padding = New System.Windows.Forms.Padding(1)
+        Me.employeeDGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.employeeDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.employeeDGV.BackgroundColor = System.Drawing.Color.LightGreen
         Me.employeeDGV.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.employeeDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.employeeDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(133, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Schoolbook", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.employeeDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(230, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MintCream
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.employeeDGV.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(133, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Centaur", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle17.Padding = New System.Windows.Forms.Padding(1)
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.MintCream
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.employeeDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(230, Byte), Integer))
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Centaur", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.MintCream
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.employeeDGV.DefaultCellStyle = DataGridViewCellStyle18
         Me.employeeDGV.EnableHeadersVisualStyles = False
         Me.employeeDGV.GridColor = System.Drawing.Color.SeaGreen
-        Me.employeeDGV.Location = New System.Drawing.Point(620, 34)
+        Me.employeeDGV.Location = New System.Drawing.Point(620, 54)
         Me.employeeDGV.Name = "employeeDGV"
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Centaur", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.Padding = New System.Windows.Forms.Padding(1)
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.MintCream
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.employeeDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.employeeDGV.RowHeadersVisible = False
+        DataGridViewCellStyle20.Padding = New System.Windows.Forms.Padding(1)
+        Me.employeeDGV.RowsDefaultCellStyle = DataGridViewCellStyle20
         Me.employeeDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.employeeDGV.Size = New System.Drawing.Size(752, 423)
         Me.employeeDGV.TabIndex = 27
@@ -235,14 +262,14 @@ Partial Class Employees
         Me.employeeDGV.ThemeStyle.GridColor = System.Drawing.Color.SeaGreen
         Me.employeeDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(133, Byte), Integer))
         Me.employeeDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.employeeDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Century Schoolbook", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.employeeDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Lucida Handwriting", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.employeeDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black
         Me.employeeDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.employeeDGV.ThemeStyle.HeaderStyle.Height = 23
         Me.employeeDGV.ThemeStyle.ReadOnly = False
         Me.employeeDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.employeeDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.employeeDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.employeeDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lucida Handwriting", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.employeeDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.employeeDGV.ThemeStyle.RowsStyle.Height = 22
         Me.employeeDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.MintCream
@@ -300,7 +327,10 @@ Partial Class Employees
         '
         'empstatus
         '
+        Me.empstatus.AutoRoundedCorners = True
         Me.empstatus.BackColor = System.Drawing.Color.Transparent
+        Me.empstatus.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.empstatus.BorderRadius = 17
         Me.empstatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.empstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.empstatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -322,22 +352,6 @@ Partial Class Employees
         Me.Label12.Size = New System.Drawing.Size(157, 35)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Family Status"
-        '
-        'empcomp
-        '
-        Me.empcomp.BackColor = System.Drawing.Color.Transparent
-        Me.empcomp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.empcomp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.empcomp.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.empcomp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.empcomp.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.empcomp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.empcomp.ItemHeight = 30
-        Me.empcomp.Items.AddRange(New Object() {"O.B hospitality", "African surf company", "Mandala"})
-        Me.empcomp.Location = New System.Drawing.Point(433, 234)
-        Me.empcomp.Name = "empcomp"
-        Me.empcomp.Size = New System.Drawing.Size(181, 36)
-        Me.empcomp.TabIndex = 20
         '
         'Label11
         '
@@ -368,7 +382,10 @@ Partial Class Employees
         '
         'empposition
         '
+        Me.empposition.AutoRoundedCorners = True
         Me.empposition.BackColor = System.Drawing.Color.Transparent
+        Me.empposition.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.empposition.BorderRadius = 17
         Me.empposition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.empposition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.empposition.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -406,7 +423,10 @@ Partial Class Employees
         '
         'epmgander
         '
+        Me.epmgander.AutoRoundedCorners = True
         Me.epmgander.BackColor = System.Drawing.Color.Transparent
+        Me.epmgander.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.epmgander.BorderRadius = 17
         Me.epmgander.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.epmgander.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.epmgander.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -414,11 +434,16 @@ Partial Class Employees
         Me.epmgander.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.epmgander.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.epmgander.ItemHeight = 30
-        Me.epmgander.Items.AddRange(New Object() {"Male", "Female", "Other"})
+        Me.epmgander.Items.AddRange(New Object() {"Female", "Male", "Other"})
         Me.epmgander.Location = New System.Drawing.Point(0, 410)
         Me.epmgander.Name = "epmgander"
         Me.epmgander.Size = New System.Drawing.Size(140, 36)
         Me.epmgander.TabIndex = 13
+        '
+        'HRappDataSet
+        '
+        Me.HRappDataSet.DataSetName = "HRappDataSet"
+        Me.HRappDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'empadd
         '
@@ -611,6 +636,64 @@ Partial Class Employees
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Manage employees"
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "employee"
+        Me.EmployeeBindingSource.DataSource = Me.HRappDataSet
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'empcomp
+        '
+        Me.empcomp.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.empcomp.DefaultText = "O.B Hospitality"
+        Me.empcomp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.empcomp.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.empcomp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.empcomp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.empcomp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.empcomp.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.empcomp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.empcomp.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.empcomp.Location = New System.Drawing.Point(440, 230)
+        Me.empcomp.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.empcomp.Name = "empcomp"
+        Me.empcomp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.empcomp.PlaceholderText = ""
+        Me.empcomp.SelectedText = ""
+        Me.empcomp.Size = New System.Drawing.Size(159, 40)
+        Me.empcomp.TabIndex = 34
+        '
+        'searchbox
+        '
+        Me.searchbox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchbox.DefaultText = ""
+        Me.searchbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchbox.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.searchbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchbox.Location = New System.Drawing.Point(763, 16)
+        Me.searchbox.Name = "searchbox"
+        Me.searchbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.searchbox.PlaceholderText = ""
+        Me.searchbox.SelectedText = ""
+        Me.searchbox.Size = New System.Drawing.Size(173, 31)
+        Me.searchbox.TabIndex = 35
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(668, 16)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(89, 31)
+        Me.Label17.TabIndex = 36
+        Me.Label17.Text = "Search"
+        '
         'Employees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -623,6 +706,8 @@ Partial Class Employees
         Me.Text = "Employees"
         Me.Guna2Panel1.ResumeLayout(False)
         CType(Me.employeeDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HRappDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -635,7 +720,6 @@ Partial Class Employees
     Friend WithEvents Label13 As Label
     Friend WithEvents empstatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents empcomp As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
@@ -663,4 +747,10 @@ Partial Class Employees
     Friend WithEvents empnatio As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents epmcin As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents HRappDataSet As HRappDataSet
+    Friend WithEvents EmployeeBindingSource As BindingSource
+    Friend WithEvents EmployeeTableAdapter As HRappDataSetTableAdapters.employeeTableAdapter
+    Friend WithEvents empcomp As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents searchbox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label17 As Label
 End Class

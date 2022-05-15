@@ -26,6 +26,9 @@ Partial Class Leave
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.searchbox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cin = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -53,6 +56,9 @@ Partial Class Leave
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.MintCream
+        Me.Guna2Panel1.Controls.Add(Me.Label17)
+        Me.Guna2Panel1.Controls.Add(Me.searchbox)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2Button2)
         Me.Guna2Panel1.Controls.Add(Me.Label9)
         Me.Guna2Panel1.Controls.Add(Me.cin)
         Me.Guna2Panel1.Controls.Add(Me.Label8)
@@ -76,6 +82,48 @@ Partial Class Leave
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(799, 491)
         Me.Guna2Panel1.TabIndex = 0
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(514, 175)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(89, 31)
+        Me.Label17.TabIndex = 37
+        Me.Label17.Text = "Search"
+        '
+        'searchbox
+        '
+        Me.searchbox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchbox.DefaultText = ""
+        Me.searchbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchbox.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.searchbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchbox.Location = New System.Drawing.Point(614, 175)
+        Me.searchbox.Name = "searchbox"
+        Me.searchbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.searchbox.PlaceholderText = ""
+        Me.searchbox.SelectedText = ""
+        Me.searchbox.Size = New System.Drawing.Size(173, 31)
+        Me.searchbox.TabIndex = 36
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(199, 161)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(105, 45)
+        Me.Guna2Button2.TabIndex = 34
+        Me.Guna2Button2.Text = "Delete"
         '
         'Label9
         '
@@ -141,7 +189,7 @@ Partial Class Leave
         Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button3.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(431, 172)
+        Me.Guna2Button3.Location = New System.Drawing.Point(344, 161)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(105, 45)
         Me.Guna2Button3.TabIndex = 29
@@ -174,9 +222,11 @@ Partial Class Leave
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.leaveDGV.DefaultCellStyle = DataGridViewCellStyle3
+        Me.leaveDGV.EnableHeadersVisualStyles = False
         Me.leaveDGV.GridColor = System.Drawing.Color.DarkSlateGray
         Me.leaveDGV.Location = New System.Drawing.Point(3, 235)
         Me.leaveDGV.Name = "leaveDGV"
+        Me.leaveDGV.RowHeadersVisible = False
         Me.leaveDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.leaveDGV.Size = New System.Drawing.Size(793, 253)
         Me.leaveDGV.TabIndex = 27
@@ -210,7 +260,7 @@ Partial Class Leave
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button1.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(156, 172)
+        Me.Guna2Button1.Location = New System.Drawing.Point(53, 161)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(105, 45)
         Me.Guna2Button1.TabIndex = 26
@@ -409,4 +459,7 @@ Partial Class Leave
     Friend WithEvents empid As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents cin As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents searchbox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label17 As Label
 End Class

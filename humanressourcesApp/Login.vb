@@ -26,7 +26,7 @@ Public Class Login
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles log.Click
-        Dim con As SqlConnection = New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRMS;Integrated Security=True")
+        Dim con As SqlConnection = New SqlConnection("Data Source=DESKTOP-Q8ABRTT;Initial Catalog=HRapp;Integrated Security=True")
         Dim cmd As SqlCommand = New SqlCommand("select * from dbo_admin where admin='" + txtadmin.Text + "' and password='" + txtpass.Text + "'", con)
         Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd)
         Dim dt As DataTable = New DataTable()
